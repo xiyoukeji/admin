@@ -1,0 +1,104 @@
+@length_cenbox: 1000px;
+@radius: 5px;
+@transitionDefaultSet: 0.2s linear;
+@textColor: #666;
+@mainColor: #55a012;
+@subColor: #7ed321;
+@redColor: #e70118;
+@placeholder: #d8d8d8;
+@lineColor: #999;
+@greyColor:#f9f9f9;
+@lightGreyColor: #fafafa;
+@bodyWhite: #fefefe;
+@blackColor:#333;
+@green:#66cecc;
+.ellipsis {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.h(@height){
+    height: @height;
+    line-height:@height;
+}
+.mutilEllipsis(@n) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: @n;
+    -webkit-box-orient: vertical;
+}
+.after{
+    &:after{
+        display: block;
+        content: '';
+        clear: both;
+    }
+}
+.viewTransitionSet {
+    transition: @transitionDefaultSet;
+    -webkit-transition: @transitionDefaultSet;
+    -moz-transition: @transitionDefaultSet;
+    -ms-transition: @transitionDefaultSet;
+    -o-transition: @transitionDefaultSet;
+}
+.centerHeight(@height) {
+    height: @height;
+    line-height: (@height - 2);
+    text-align: center;
+}
+.ch(@height) {
+    height: @height;
+    line-height: @height;
+    text-align: center;
+}
+.border(@color: @lineColor) {
+    border: 1px solid @color;
+}
+
+.bb(@color: @lineColor) {
+    border-bottom: 1px solid @color;
+}
+
+.center(@width) {
+    width: @width;
+    position: relative;
+    left: 50%;
+    margin-left: -@width / 2;
+}
+.height(@height){
+    height:@height;
+    position:relative;
+    top: 50%;
+    margin-top: -@height / 2;
+}
+.multiCenter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.radius(@radius:5px){
+	border-radius: @radius;
+}
+.colorBox(@color:@mainColor){
+    background-color: @color;
+    color:white;
+}
+.veryCenter{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+}
+
+
+
+
+
+
+
+
+
+
+

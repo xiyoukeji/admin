@@ -1,0 +1,75 @@
+<div class="admin_content_innerBox admin_ui_cont_bottomPadding">
+	<div class="admin_scrollBox">
+		<div class="admin_ui_header">
+				<i class="labelcolor fa fa-university fa-2x"></i>
+				<span class="maintitle">表单和编辑器</span>
+		</div>
+		<div class="admin_ui_cont">
+			<table class="admin_ui_form">
+				<tbody>
+					<tr>
+						<th style="width: 120px;">
+							<span>选择框</span>
+						</th>
+						<td>
+							<select name="" id="">
+								<option>123</option>
+								<option>123</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<th>
+							<span>标题</span>
+						</th>
+						<td>
+							<input type="text" class="admin_ui_input" placeholder="请输入标题">
+						</td>
+					</tr>
+					<tr>
+						<th>
+							<span>正文</span>
+						</th>
+						<td>
+							<textarea id="tinymce"></textarea>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<div class="admin_ui_cont_bottomFixed">
+	<div class="admin_ui_button_group" style="float: right">
+		<div class="admin_ui_button admin_ui_button_white">
+			返回
+		</div>
+		<div class="admin_ui_button admin_ui_button_green">
+			确定
+		</div>
+	</div>
+</div>
+<script>
+tinymce.init({ 
+  	selector: '#tinymce',
+	  height: 500,
+	  theme: 'modern',
+	  plugins: [
+	    'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+	    'searchreplace wordcount visualblocks visualchars code fullscreen',
+	    'insertdatetime media nonbreaking save table contextmenu directionality',
+	    'emoticons template paste textcolor colorpicker textpattern imagetools'
+	  ],
+	  toolbar1: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+	  toolbar2: 'print preview media | forecolor backcolor emoticons',
+	  image_advtab: true,
+	  templates: [
+	    { title: 'Test template 1', content: 'Test 1' },
+	    { title: 'Test template 2', content: 'Test 2' }
+	  ],
+	  content_css: [
+	    '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
+	    '//www.tinymce.com/css/codepen.min.css'
+	  ]
+});
+</script>

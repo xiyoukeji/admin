@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="author" content="chendind">
-	<meta name="reply-to" content="chendind@xiyoukeji.com">
+    <meta name="reply-to" content="chendind@xiyoukeji.com">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" type="text/css" href="../source/css/colpick.css">
     <link rel="stylesheet" type="text/css" href="../source/css/classic.css">
@@ -20,122 +20,129 @@
     <script src="../source/js/jquery-1.11.1.min.js"></script>
     <script src="../source/js/public.js"></script>
 
-	<script src="../source/plunges/tinymce/tinymce/js/tinymce/tinymce.min.js"></script>
-	<script src="../source/plunges/zTree/js/jquery.ztree.all.min.js"></script>
+    <script src="../source/plunges/tinymce/tinymce.js"></script>
+    <script src="../source/plunges/zTree/js/jquery.ztree.all.min.js"></script>
     <script src="../source/plunges/ueditor/ueditor.config.js"></script>
     <script src="../source/plunges/ueditor/ueditor.all.min.js"> </script>
     <script src="../source/plunges/ueditor/lang/zh-cn/zh-cn.js"></script>
+    <script src="../source/js/page.js"></script>
 </head>
 <body>
-<div id="admin_body" class="admin_body">
-    <div id="admin_header" class="admin_header">
-        <div class="brand">
-        	<div class="heart"><i class="fa fa-heart-o fa-lg"></i></div>
-	        <span style="font-size:20px;margin-left:10px;">模版</span>
-	    </div>
-		<div class="client" id="client">
-	      	<img src="../source/images/avatar.jpg" class="personimg">
-	      	<div class="name">&nbsp;&nbsp;Mila Kunis</div>
-	      	<div class="xiala"><i class="fa fa-sort-desc" style="color:white"></i></div>
-	    </div>
-      	<ul class="dropdown-menu">
-      		<li>
-      			<a href="#/managementor.html">
-      				<div><i class="fa fa-user"></i>&nbsp;修改密码</div>
-      			</a>
-      		</li>
-      		<li style="margin-top:5px;" id="logout">
-      			<i class="fa fa-sign-out"></i>&nbsp;登出
-      		</li>
-      	</ul>
-	</div>
+    <div id="admin_body" class="admin_body">
+        <div id="admin_header" class="admin_header">
+            <div class="brand">
+            <div class="heart"><i class="fa fa-heart-o fa-lg"></i></div>
+            <span style="font-size:20px;margin-left:10px;">西柚科技后台管理系统</span>
+        </div>
+        <div class="client" id="client">
+            <img src="../source/images/avatar.jpg" class="personimg">
+            <div class="name">&nbsp;&nbsp;Mila Kunis</div>
+            <div class="xiala"><i class="fa fa-sort-desc" style="color:white"></i></div>
+        </div>
+        <ul class="dropdown-menu">
+            <li>
+                <a href="#/managementor.html">
+                    <div><i class="fa fa-user"></i>&nbsp;修改密码</div>
+                </a>
+            </li>
+            <li style="margin-top:5px;" id="logout">
+                <i class="fa fa-sign-out"></i>&nbsp;登出
+            </li>
+        </ul>
+    </div>
     <div id="admin_left" class="admin_left">
-    	<div class="leftmenu">
-          	<div>
-          		<a class="line">
-          			<span class="icon markIcon">
-          				<i class="fa fa-users fa-lg"></i>
-          			</span>
-	            	<div class="name">列表与编辑</div>
-	            	<span class="icon downIcon">
-	            		<i class="fa fa-angle-down fa-lg"></i>
-	            	</span>
-	            	<span class="icon rightIcon">
-	            		<i class="fa fa-angle-right fa-lg"></i>
-	            	</span>
-          		</a>
-            	<div class="submenu">
-                  	<a class="line" href="#/charts.html">
-                  		<span class="icon markIcon">
-	                  		<i class="fa fa-caret-right fa-lg"></i>
-	                  	</span>
-                  		<div class="name">表格</div>
-                  	</a>
-                	<a class="line" href="#/formAndEditor.html">
-                		<span class="icon markIcon">
-		                	<i class="fa fa-caret-right fa-lg"></i>
-		                </span>
-	                	<div class="name">表单和编辑器</div>
-	                </a>
-	          	</div>
-          	</div>
-          	<div>
-          		<a class="line">
-          			<span class="icon markIcon">
-	          			<i class="fa fa-users fa-lg"></i>
-	          		</span>
-	            	<div class="name">组件</div>
-	            	<span class="icon downIcon">
-	            		<i class="fa fa-angle-down fa-lg"></i>
-	            	</span>
-	            	<span class="icon rightIcon">
-	            		<i class="fa fa-angle-right fa-lg"></i>
-	            	</span>
-          		</a>
-          		<div class="submenu">
-                  	<a class="line" href="#/zTreeDemo.html">
-                  		<span class="icon markIcon">
-	                  		<i class="fa fa-caret-right fa-lg"></i>
-	                  	</span>
-                  		<div class="name">zTreeDemo</div>
-                  	</a>
-                	<a class="line" href="#/formAndEditor.html">
-                		<span class="icon markIcon">
-		                	<i class="fa fa-caret-right fa-lg"></i>
-		                </span>
-	                	<div class="name">表单和编辑器</div>
-	                </a>
-	          	</div>
-          	</div>
-          	<div>
-          		<a class="line" href="#">
-          			<span class="icon markIcon">
-	          			<i class="fa fa-users fa-lg"></i>
-	          		</span>
-	            	<div class="name">其他菜单</div>
-          		</a>
-          	</div>
-          	<div>
-          		<a class="line" href="#">
-          			<span class="icon markIcon">
-	          			<i class="fa fa-users fa-lg"></i>
-	          		</span>
-	            	<div class="name">其他菜单</div>
-          		</a>
-          	</div>
-          	<div>
-          		<a class="line" href="#">
-          			<span class="icon markIcon">
-	          			<i class="fa fa-users fa-lg"></i>
-	          		</span>
-	            	<div class="name">其他菜单</div>
-          		</a>
-          	</div>
-    	</div>
+        <div class="leftmenu">
+            <div>
+                <a href="#/welcome.html" class="line">
+                    <span class="icon markIcon">
+                        <i class="fa fa-dashboard fa-lg"></i>
+                    </span>
+                    <div class="name">网站概况</div>
+                </a>
+            </div>
+            <div>
+                <a class="line">
+                    <span class="icon markIcon">
+                        <i class="fa fa-users fa-lg"></i>
+                    </span>
+                    <div class="name">列表与编辑</div>
+                    <span class="icon downIcon">
+                        <i class="fa fa-angle-down fa-lg"></i>
+                    </span>
+                    <span class="icon rightIcon">
+                        <i class="fa fa-angle-right fa-lg"></i>
+                    </span>
+                </a>
+                <div class="submenu">
+                      <a class="line" href="#/charts.html">
+                          <span class="icon markIcon">
+                              <i class="fa fa-table"></i>
+                          </span>
+                          <div class="name">表格</div>
+                      </a>
+                    <a class="line" href="#/formAndEditor.html">
+                        <span class="icon markIcon">
+                            <i class="fa fa-edit"></i>
+                        </span>
+                        <div class="name">表单和编辑器</div>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <a class="line">
+                    <span class="icon markIcon">
+                        <i class="fa fa-users fa-lg"></i>
+                    </span>
+                    <div class="name">组件</div>
+                    <span class="icon downIcon">
+                        <i class="fa fa-angle-down fa-lg"></i>
+                    </span>
+                    <span class="icon rightIcon">
+                        <i class="fa fa-angle-right fa-lg"></i>
+                    </span>
+                </a>
+                <div class="submenu">
+                    <a class="line" href="#/zTreeDemo.html">
+                        <span class="icon markIcon">
+                            <i class="fa fa-caret-right"></i>
+                        </span>
+                        <div class="name">zTreeDemo</div>
+                    </a>
+                    <a class="line" href="#/formAndEditor.html">
+                        <span class="icon markIcon">
+                            <i class="fa fa-caret-right"></i>
+                        </span>
+                        <div class="name">表单和编辑器</div>
+                    </a>
+                </div>
+            </div>
+            <div>
+                  <a class="line" href="#">
+                      <span class="icon markIcon">
+                          <i class="fa fa-users fa-lg"></i>
+                      </span>
+                      <div class="name">其他菜单</div>
+                  </a>
+            </div>
+            <div>
+                  <a class="line" href="#">
+                      <span class="icon markIcon">
+                          <i class="fa fa-users fa-lg"></i>
+                      </span>
+                      <div class="name">其他菜单</div>
+                  </a>
+            </div>
+            <div>
+                  <a class="line" href="#">
+                        <span class="icon markIcon">
+                           <i class="fa fa-users fa-lg"></i>
+                        </span>
+                        <div class="name">其他菜单</div>
+                  </a>
+            </div>
+        </div>
     </div>
-    <div id="admin_content" class="admin_content">
-
-    </div>
+    <div id="admin_content" class="admin_content"></div>
 </div>
 </body>
 </html>

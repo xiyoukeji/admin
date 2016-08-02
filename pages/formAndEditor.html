@@ -33,10 +33,20 @@
 							<span>输入自动补齐</span>
 						</th>
 						<td>
-							<input type="text" class="admin_ui_input" 
-								data-autoComplete 
-								data-params="{'url':'../source/JSON/autoComplete.json','type':'GET','data': {'value1': <js>$this.val()</js>,'value2':<js>$this.height()</js>}}" 
-								placeholder="请输入西" />
+							<div class="admin_ui_input_tagBox">
+								<div class="admin_ui_colorLabel">西柚</div>
+								<div class="admin_ui_colorLabel">西柚</div>
+							</div>
+							<div class="admin_ui_input_autoCompleteBox">
+								<input type="text" class="admin_ui_input" 
+									data-autoComplete 
+									data-params='{"url":"../source/JSON/autoComplete.json","type":"GET","data": {"value": "<js>$this.val()</js>","otherValue":"<js>$this.height()</js>"}}' 
+									placeholder="请输入西" />
+								<div class="admin_ui_input_autoCompleteBox">
+									<div class="line">西柚科技</div>
+									<div class="line">西柚</div>
+								</div>
+							</div>
 						</td>
 					</tr>
 					<tr>

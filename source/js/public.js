@@ -46,49 +46,65 @@ function eventBind(){
 }
 function uiComponentEventBind(){
     $.each($("[data-autoComplete]"),function(){
-        $(this).bind('input',function(){
-            var $this = $(this);
+        var $this = $(this);
+        var _params = params = $this.attr("data-params");
+        var regx = /<js>(.*?)<\/js>/g;
+        do{
+            var matchArr = regx.exec(params);
+            matchArr&&(_params = _params.replace(/<js>.*?<\/js>/,eval(matchArr[1])));
+        }while(regx.lastIndex);
+        _params = JSON.parse(_params);
+        if(!$this.siblings('.admin_ui_input_autoCompleteBox').length){
+            $this.after('<div class="admin_ui_input_autoCompleteBox"></div>');
+        }
+        var autoCompleteBox = $this.siblings(".admin_ui_input_autoCompleteBox");
+        $this.bind('input',function(){
             var keyword = $.trim($this.val());
-            var params = $this.attr("data-params");
-            var regx = /\<js\>([\s\S^(<\/js\>)]+)\<\/js\>/;
-            regx.exec(params);
+            var timeout;
             if(keyword!=""){
                 timeout&&clearTimeout(timeout);
                 timeout = setTimeout(function(){
-                    $.ajax({
-                        url: url,
-                        type: type,
-                        data:{
-                            "key":keyword
-                        },
-                        success: function(data){
-                            switch(data.state){
-                                case "0":
-                                    $this.siblings(".searchResult").empty();
-                                    var school=data.school;
-                                    if(school.length>0){
-                                        for (var i = 0, length = school.length; i < length; i++){
-                                            var orderhtml=$('<li>'+
-                                                '<a href="'+baseROOT+'/search.html?key='+school[i]+'">'+school[i]+'</a>'+
-                                                '</li>');
-                                            $this.siblings(".searchResult").append(orderhtml);
-                                        }
-                                        $this.siblings(".searchResult").show();
+                    if($this.val()){
+                        autoCompleteBox.empty().hide();
+                        $.ajax(_params).done(function(data){
+                            if(data.state == 0){
+                                var textArr = data.data;
+                                if(textArr.length > 0){
+                                    for(var i = 0, length = textArr.length; i < length; i++){
+                                        var line = $('<div class="line">'+
+                                                        textArr[i]+
+                                                    '</div>');
+                                        line.bind('click',function(){
+                                            console.log($(this).text())
+                                            // if($this.siblings('.admin_ui_input_tagBox').length){
+                                            //     $this.before('<div class="admin_ui_input_tagBox"></div>');
+                                            // }
+                                            // var tagBox = $this.siblings('.admin_ui_input_tagBox');
+                                            // for(var k = 0, length = tagBox.children('.admin_ui_colorLabel').length; k < length; k++){
+                                            //     if(tagBox.children('.admin_ui_colorLabel').eq(k).text() == $(this).text()){
+                                            //         break;
+                                            //     }
+                                            //     if(k == length-1){
+                                            //         tagBox.append('<div class="admin_ui_colorLabel">'+$(this).text()+'</div>');
+                                            //     }
+                                            // }
+                                        });
+                                        autoCompleteBox.append(line);
                                     }
-                                    else{
-                                        $this.siblings(".searchResult").hide();
-                                    }
-                                break;
-                                default: 
-                                    $this.siblings(".searchResult").hide();
-                                break;
+                                    autoCompleteBox.show();
+                                }
+                                else{
+                                    var line = '<div class="line" onclick="return false">'+
+                                                    '无搜索结果'+
+                                                '</div>';
+                                    autoCompleteBox.append(line);
+                                }  
                             }
-                        },
-                        error: function(){
-                                
-                        }
-                    });
-                }, 300);
+                        }).fail(function(data){
+                            console.log(data);
+                        });
+                    }
+                }, 500);
             }
         })
     });

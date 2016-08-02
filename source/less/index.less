@@ -394,6 +394,48 @@ body{
 	border: 1px solid @lineColor;
 	width: 100%;
 }
+.admin_ui_input_tagBox{
+	.admin_ui_colorLabel{
+		position: relative;
+		overflow: hidden;
+		&:after{
+			display: block;
+			content: '删除';
+			position: absolute;
+			top: 100%;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: @redColor;
+			color: #fff;
+			padding: 4px 8px;
+			cursor: pointer;
+		}
+		&:hover{
+			&:after{
+				top: 0;
+			}
+		}
+	}
+}
+.admin_ui_input_autoCompleteBox{
+	display: none;
+	position: absolute;
+	top: 30px;
+	left: 0px;
+	z-index: 1;
+	border: 1px solid @lineColor;
+	border-top: none;
+	background-color: #fff;
+	.line{
+		min-width: 100px;
+		padding: 6px 4px;
+		cursor: pointer;
+		&:hover{
+			background-color: @greyColor;
+		}
+	}
+}
 .admin_ui_select{
 	position: relative;
 	display: inline-block;
@@ -426,21 +468,26 @@ body{
 }
 .admin_ui_colorLabel{
 	display: inline-block;
-	padding: 4px;
-	color: #fff;
+	padding: 4px 8px;
 	font-size: 12px;
 	line-height: 1;
+	background-color: #ddd;
+	border-color: darken(#ddd, 10%);
+	color: #333;
 	&.admin_ui_colorLabel_red{
 		background-color: @redColor;
 		border-color: darken(@redColor, 10%);
+		color: #fff;
 	}
 	&.admin_ui_colorLabel_green{
 		background-color: @greenColor;
 		border-color: darken(@greenColor, 10%);
+		color: #fff;
 	}
 	&.admin_ui_colorLabel_yellow{
 		background-color: @yellowColor;
 		border-color: darken(@yellowColor, 10%);
+		color: #fff;
 	}
 }
 .admin_ui_pagination{

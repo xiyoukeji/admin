@@ -6,6 +6,7 @@
 @greenColor: #49bf67;
 @yellowColor: #f8a326;
 @blueColor: #00acec;
+@textColor: #999;
 body{
 	position: absolute;
 	width: 100%;
@@ -201,6 +202,9 @@ body{
 .admin_ui_padding{
 	padding: 8px;
 }
+.admin_ui_mainColor{
+	color: @mainColor;
+}
 .admin_ui_link{
 	color: darken(@blueColor, 5%) !important;
 	&:hover{
@@ -301,8 +305,8 @@ body{
 	height: 84px;
 	padding: 20px;
 	border-bottom: 1px solid @lineColor;
+	background-color: #fff;
 	&>i{
-		color: @mainColor;
 		margin-right: 10px;
 	}
 	.maintitle{
@@ -388,11 +392,44 @@ body{
 		}
 	}
 }
+.admin_ui_leadForm{
+	.admin_ui_form;
+	tr{
+		td{
+			padding: 20px;
+			&.admin_ui_leadForm_lead{
+				h3{
+					font-size: 21px;
+					margin-bottom: 20px;
+				}
+				p{
+					color: @textColor;
+					width: 200px;
+					font-size: 12px;
+				}
+			}
+		}
+	}
+}
+.admin_ui_form_field{
+	margin-bottom: 15px;
+}
+.admin_ui_name{
+	font-size: 14px;
+	margin-bottom: 5px;
+}
 .admin_ui_input{
 	padding: 6px 4px;
 	height: 30px;
 	border: 1px solid @lineColor;
 	width: 100%;
+	background-color: #fff;
+}
+.admin_ui_separator{
+	height: 0;
+	width: 100%;
+	margin: 20px 0;
+	border-bottom: 1px solid lighten(@lineColor,10%);
 }
 .admin_ui_input_autoCompleteBox{
 	position: relative;

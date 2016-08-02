@@ -206,6 +206,9 @@ body {
 .admin_ui_padding {
   padding: 8px;
 }
+.admin_ui_mainColor {
+  color: #f34541;
+}
 .admin_ui_link {
   color: #0099d3 !important;
 }
@@ -303,9 +306,9 @@ body {
   height: 84px;
   padding: 20px;
   border-bottom: 1px solid #ddd;
+  background-color: #fff;
 }
 .admin_ui_header > i {
-  color: #f34541;
   margin-right: 10px;
 }
 .admin_ui_header .maintitle {
@@ -366,11 +369,53 @@ body {
   display: inline-block;
   padding-top: 6px;
 }
+.admin_ui_leadForm {
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.admin_ui_leadForm tr th,
+.admin_ui_leadForm tr td {
+  padding: 8px;
+  vertical-align: top;
+}
+.admin_ui_leadForm tr th {
+  text-align: right;
+}
+.admin_ui_leadForm tr th > span {
+  display: inline-block;
+  padding-top: 6px;
+}
+.admin_ui_leadForm tr td {
+  padding: 20px;
+}
+.admin_ui_leadForm tr td.admin_ui_leadForm_lead h3 {
+  font-size: 21px;
+  margin-bottom: 20px;
+}
+.admin_ui_leadForm tr td.admin_ui_leadForm_lead p {
+  color: #999;
+  width: 200px;
+  font-size: 12px;
+}
+.admin_ui_form_field {
+  margin-bottom: 15px;
+}
+.admin_ui_name {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
 .admin_ui_input {
   padding: 6px 4px;
   height: 30px;
   border: 1px solid #ddd;
   width: 100%;
+  background-color: #fff;
+}
+.admin_ui_separator {
+  height: 0;
+  width: 100%;
+  margin: 20px 0;
+  border-bottom: 1px solid #f7f7f7;
 }
 .admin_ui_input_autoCompleteBox {
   position: relative;

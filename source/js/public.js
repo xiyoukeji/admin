@@ -30,9 +30,6 @@ function eventBind(){
         else{
           	$(".dropdown-menu").hide();
         }
-        $(document).one("click", function(){
-	        $(".dropdown-menu").hide();
-	    });
         e.stopPropagation();
     });
     $(ADMIN_CONFIG.leftSelector+" .leftmenu>div>.line").bind('click',function(){

@@ -394,10 +394,14 @@ body{
 	border: 1px solid @lineColor;
 	width: 100%;
 }
+.admin_ui_input_autoCompleteBox{
+	position: relative;
+}
 .admin_ui_input_tagBox{
 	.admin_ui_colorLabel{
 		position: relative;
 		overflow: hidden;
+		margin-right: 4px;
 		&:after{
 			display: block;
 			content: '删除';
@@ -418,7 +422,7 @@ body{
 		}
 	}
 }
-.admin_ui_input_autoCompleteBox{
+.admin_ui_input_autoComplete_selectBox{
 	display: none;
 	position: absolute;
 	top: 30px;

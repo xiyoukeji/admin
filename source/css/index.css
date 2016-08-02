@@ -372,9 +372,13 @@ body {
   border: 1px solid #ddd;
   width: 100%;
 }
+.admin_ui_input_autoCompleteBox {
+  position: relative;
+}
 .admin_ui_input_tagBox .admin_ui_colorLabel {
   position: relative;
   overflow: hidden;
+  margin-right: 4px;
 }
 .admin_ui_input_tagBox .admin_ui_colorLabel:after {
   display: block;
@@ -392,7 +396,7 @@ body {
 .admin_ui_input_tagBox .admin_ui_colorLabel:hover:after {
   top: 0;
 }
-.admin_ui_input_autoCompleteBox {
+.admin_ui_input_autoComplete_selectBox {
   display: none;
   position: absolute;
   top: 30px;
@@ -402,12 +406,12 @@ body {
   border-top: none;
   background-color: #fff;
 }
-.admin_ui_input_autoCompleteBox .line {
+.admin_ui_input_autoComplete_selectBox .line {
   min-width: 100px;
   padding: 6px 4px;
   cursor: pointer;
 }
-.admin_ui_input_autoCompleteBox .line:hover {
+.admin_ui_input_autoComplete_selectBox .line:hover {
   background-color: #f4f5f6;
 }
 .admin_ui_select {

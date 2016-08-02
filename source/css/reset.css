@@ -4,6 +4,10 @@
   margin: 0;
   -webkit-tap-highlight-color: transparent;
 }
+*:before,
+*:after {
+  box-sizing: border-box;
+}
 .ds-thread,
 .ds-thread * {
   box-sizing: content-box;

@@ -18,7 +18,10 @@ function eventBind(){
 	$(window).bind('load hashchange', loadContent);
 	$(window).bind('resize',windowReset);
     $(window).bind('click', function(){
-        $("[data-autoCloseWhenWindowClick]").hide();
+        $("[data-hideWhenBlur]").hide();
+    });
+    $(window).on('click','[data-urlBack]',function(){
+        window.history.back();
     })
 	$(ADMIN_CONFIG.headerSelector+" .client").bind("click",function(e){
         if($(".dropdown-menu").is(":hidden")){
@@ -56,7 +59,7 @@ function uiComponentEventBind(){
         var regx = /<js>(.*?)<\/js>/g;
 
         if(!$input.siblings('.admin_ui_input_autoComplete_selectBox').length){
-            $input.after('<div class="admin_ui_input_autoComplete_selectBox" data-autoCloseWhenWindowClick></div>');
+            $input.after('<div class="admin_ui_input_autoComplete_selectBox" data-hideWhenBlur></div>');
         }
         var selectBox = $input.siblings(".admin_ui_input_autoComplete_selectBox");
         var timeout;

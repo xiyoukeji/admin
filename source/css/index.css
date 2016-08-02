@@ -199,6 +199,7 @@ body {
 }
 .admin_ui_border {
   border: 1px solid #ddd;
+  background-color: #fff;
 }
 .admin_ui_cont {
   padding: 20px;

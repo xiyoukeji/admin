@@ -1,55 +1,37 @@
 <div class="admin_content_innerBox admin_ui_cont_bottomPadding">
 	<div class="admin_scrollBox">
 		<div class="admin_ui_header">
-			<i class="fa fa-edit fa-2x"></i>
+			<i class="fa fa-edit fa-2x admin_ui_mainColor"></i>
 			<span class="maintitle">表单和编辑器</span>
 		</div>
 		<div class="admin_ui_cont">
-			<table class="admin_ui_form">
-				<tbody>
-					<tr>
-						<th style="width: 120px;">
-							<span>选择框</span>
-						</th>
-						<td>
-							<div class="admin_ui_select">
-								<select>
-									<option>选项1</option>
-									<option>选项2</option>
-								</select>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<th>
-							<span>输入框</span>
-						</th>
-						<td>
-							<input type="text" class="admin_ui_input" placeholder="请输入标题">
-						</td>
-					</tr>
-					<tr>
-						<th>
-							<span>输入自动补齐</span>
-						</th>
-						<td>
-							<div class="admin_ui_input_autoCompleteBox" 
-									data-autoComplete 
-									data-params='{"url":"../source/JSON/autoComplete.json","type":"GET","data": {"keyword": "<js>$input.val()</js>","otherValue":"<js>$this.height()</js>"}}'>
-								<input type="text" class="admin_ui_input" placeholder="请输入西" />
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<th>
-							<span>正文</span>
-						</th>
-						<td>
-							<textarea id="tinymce"></textarea>
-						</td>
-					</tr>
-				</tbody>
-			</table>
+			<div class="admin_ui_border admin_ui_cont">
+				<div class="admin_ui_form_field">
+					<div class="admin_ui_name">选择框</div>
+					<div class="admin_ui_select">
+						<select>
+							<option>选项1</option>
+							<option>选项2</option>
+						</select>
+					</div>
+				</div>
+				<div class="admin_ui_form_field">
+					<div class="admin_ui_name">输入框</div>
+					<input type="text" class="admin_ui_input" placeholder="请输入标题">
+				</div>
+				<div class="admin_ui_form_field">
+					<div class="admin_ui_name">输入自动补齐</div>
+					<div class="admin_ui_input_autoCompleteBox" 
+							data-autoComplete 
+							data-params='{"url":"../source/JSON/autoComplete.json","type":"GET","data": {"keyword": "<js>$input.val()</js>","otherValue":"<js>$this.height()</js>"}}'>
+						<input type="text" class="admin_ui_input" placeholder="请输入西" />
+					</div>
+				</div>
+				<div class="admin_ui_form_field">
+					<div class="admin_ui_name">tinymce</div>
+					<textarea id="tinymce"></textarea>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

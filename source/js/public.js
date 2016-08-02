@@ -13,9 +13,13 @@ $(function(){
 
 });
 function eventBind(){
+    // eventBind 仅进行一次
 	// 页面刷新 hash变化时的处理
 	$(window).bind('load hashchange', loadContent);
 	$(window).bind('resize',windowReset);
+    $(window).bind('click', function(){
+        $("[data-autoCloseWhenWindowClick]").hide();
+    })
 	$(ADMIN_CONFIG.headerSelector+" .client").bind("click",function(e){
         if($(".dropdown-menu").is(":hidden")){
           	$(".dropdown-menu").show();
@@ -56,7 +60,7 @@ function uiComponentEventBind(){
         }while(regx.lastIndex);
         _params = JSON.parse(_params);
         if(!$input.siblings('.admin_ui_input_autoComplete_selectBox').length){
-            $input.after('<div class="admin_ui_input_autoComplete_selectBox"></div>');
+            $input.after('<div class="admin_ui_input_autoComplete_selectBox" data-autoCloseWhenWindowClick></div>');
         }
         var selectBox = $input.siblings(".admin_ui_input_autoComplete_selectBox");
         $input.bind('input',function(){

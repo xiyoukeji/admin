@@ -52,21 +52,23 @@ function uiComponentEventBind(){
     $.each($("[data-autoComplete]"),function(){
         var $this = $(this);
         var $input = $(this).children('input');
-        var _params = params = $this.attr('data-params');
+        var params = $this.attr('data-params');
         var regx = /<js>(.*?)<\/js>/g;
-        do{
-            var matchArr = regx.exec(params);
-            matchArr&&(_params = _params.replace(/<js>.*?<\/js>/,eval(matchArr[1])));
-        }while(regx.lastIndex);
-        _params = JSON.parse(_params);
+
         if(!$input.siblings('.admin_ui_input_autoComplete_selectBox').length){
             $input.after('<div class="admin_ui_input_autoComplete_selectBox" data-autoCloseWhenWindowClick></div>');
         }
         var selectBox = $input.siblings(".admin_ui_input_autoComplete_selectBox");
+        var timeout;
         $input.bind('input',function(){
             var keyword = $.trim($input.val());
-            var timeout;
             if(keyword!=""){
+                var _params = params;
+                do{
+                    var matchArr = regx.exec(params);
+                    matchArr&&(_params = _params.replace(/<js>.*?<\/js>/,eval(matchArr[1])));
+                }while(regx.lastIndex);
+                _params = JSON.parse(_params);
                 timeout&&clearTimeout(timeout);
                 timeout = setTimeout(function(){
                     selectBox.empty().hide();

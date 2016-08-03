@@ -12,7 +12,8 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
 }
 body {
@@ -88,7 +89,7 @@ body {
   background-color: #F4F4F4;
   z-index: 0;
   overflow: auto;
-  border-right: 1px solid #ddd;
+  border-right: 1px solid #dddddd;
 }
 .admin_left .leftmenu {
   height: 100%;
@@ -100,7 +101,7 @@ body {
   display: block;
   height: 42px;
   line-height: 42px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #dddddd;
   padding-left: 42px;
   padding-right: 42px;
   font-size: 14px;
@@ -185,7 +186,7 @@ body {
   height: 50px;
   width: 100%;
   padding: 5px 20px;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #dddddd;
   background-color: #fff;
 }
 .admin_ui_button_group:after {
@@ -198,7 +199,7 @@ body {
   margin: 0 8px;
 }
 .admin_ui_border {
-  border: 1px solid #ddd;
+  border: 1px solid #dddddd;
   background-color: #fff;
 }
 .admin_ui_cont {
@@ -223,7 +224,7 @@ body {
   text-align: center;
   padding: 13px;
   font-size: 14px;
-  border: 1px solid #ddd;
+  border: 1px solid #dddddd;
   line-height: 1;
   cursor: pointer;
 }
@@ -269,7 +270,7 @@ body {
   padding: 5px 0;
   top: 45px;
   right: 10px;
-  border: 1px solid #ddd;
+  border: 1px solid #dddddd;
   line-height: 23px;
   cursor: pointer;
   display: none;
@@ -293,7 +294,7 @@ body {
   right: 9px;
   display: inline-block;
   border-right: 7px solid transparent;
-  border-bottom: 7px solid #ddd;
+  border-bottom: 7px solid #dddddd;
   border-left: 7px solid transparent;
   border-bottom-color: rgba(0, 0, 0, 0.2);
   content: '';
@@ -306,7 +307,7 @@ body {
   width: 100%;
   height: 84px;
   padding: 20px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #dddddd;
   background-color: #fff;
 }
 .admin_ui_header > i {
@@ -321,12 +322,12 @@ body {
   height: 50px;
   background-color: white;
   padding: 10px;
-  border-top: 1px solid #ddd;
-  border-left: 1px solid #ddd;
-  border-right: 1px solid #ddd;
+  border-top: 1px solid #dddddd;
+  border-left: 1px solid #dddddd;
+  border-right: 1px solid #dddddd;
 }
 .admin_ui_table {
-  border: 1px solid #ddd;
+  border: 1px solid #dddddd;
   border-collapse: collapse;
   table-layout: fixed;
   width: 100%;
@@ -352,7 +353,7 @@ body {
 .admin_ui_table tr th,
 .admin_ui_table tr td {
   padding: 8px;
-  border: 1px solid #ddd;
+  border: 1px solid #dddddd;
 }
 .admin_ui_form {
   border-collapse: collapse;
@@ -394,7 +395,7 @@ body {
   margin-bottom: 20px;
 }
 .admin_ui_leadForm tr td.admin_ui_leadForm_lead p {
-  color: #999;
+  color: #999999;
   width: 200px;
   font-size: 12px;
 }
@@ -408,7 +409,7 @@ body {
 .admin_ui_input {
   padding: 6px 4px;
   height: 30px;
-  border: 1px solid #ddd;
+  border: 1px solid #dddddd;
   width: 100%;
   background-color: #fff;
 }
@@ -448,7 +449,7 @@ body {
   top: 30px;
   left: 0px;
   z-index: 1;
-  border: 1px solid #ddd;
+  border: 1px solid #dddddd;
   border-top: none;
   background-color: #fff;
 }
@@ -472,7 +473,7 @@ body {
   width: 100%;
   height: 30px;
   padding: 6px 20px 6px 4px;
-  border: 1px solid #ddd;
+  border: 1px solid #dddddd;
   border-radius: 0;
   appearance: none;
   -moz-appearance: none;
@@ -523,9 +524,9 @@ body {
   background-color: #fff;
   padding: 10px;
   position: relative;
-  border-left: 1px solid #ddd;
-  border-right: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
+  border-left: 1px solid #dddddd;
+  border-right: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
 }
 .admin_ui_word {
   width: 100px;
@@ -539,10 +540,10 @@ body {
 .admin_ui_label {
   height: 33px;
   width: 400px;
-  border: 1px solid #ddd;
+  border: 1px solid #dddddd;
   font-size: 14px;
   padding-left: 7px;
-  background-color: white;
+  background-color: white
   /*border-radius: 5px;*/
 }
 .iconButton {
@@ -580,3 +581,4 @@ body {
   background: #ddd;
   color: #000;
 }
+/*# sourceMappingURL=index.css.map */

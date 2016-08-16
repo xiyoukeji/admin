@@ -1,54 +1,54 @@
 var ADMIN_CONFIG = {
-	"homePage": "welcome.html",
-	"mainBodySelector": "#admin_body",
-	"headerSelector": "#admin_header",
-	"contentSelector": "#admin_content",
-	"leftSelector":"#admin_left"
+    "homePage": "welcome.html",
+    "mainBodySelector": "#admin_body",
+    "headerSelector": "#admin_header",
+    "contentSelector": "#admin_content",
+    "leftSelector":"#admin_left"
 };
 $(function(){
     adminInit();
     function adminInit(){
-    	eventBind();
+        eventBind();
     }
-
 });
 function eventBind(){
     // eventBind 仅进行一次
-	// 页面刷新 hash变化时的处理
-	$(window).bind('load hashchange', loadContent);
-	$(window).bind('resize',windowReset);
+    // 页面刷新 hash变化时的处理
+    $(window).bind('load hashchange', loadContent);
+    $(window).bind('resize',windowReset);
     $(window).bind('click', function(){
         $("[data-hideWhenBlur]").hide();
     });
     $(window).on('click','[data-urlBack]',function(){
         window.history.back();
     })
-	$(ADMIN_CONFIG.headerSelector+" .client").bind("click",function(e){
+    $(ADMIN_CONFIG.headerSelector+" .client").bind("click",function(e){
         if($(".dropdown-menu").is(":hidden")){
-          	$(".dropdown-menu").show();
+            $(".dropdown-menu").show();
         }
         else{
-          	$(".dropdown-menu").hide();
+            $(".dropdown-menu").hide();
         }
         e.stopPropagation();
     });
     $(ADMIN_CONFIG.leftSelector+" .leftmenu>div>.line").bind('click',function(){
-    	if($(this).next('.submenu').length){
-    		// 有子菜单
-    		if($(this).hasClass("active")){
-    			// 打开的
-    			$(this).next('.submenu').slideUp(300);
-    			$(this).removeClass("active");
-    		}
-    		else{
-    			$(this).next('.submenu').slideDown(300);
-    			$(this).addClass("active");
-    		}
-    		
-    	}
+        if($(this).next('.submenu').length){
+            // 有子菜单
+            if($(this).parent().hasClass("active")){
+                // 打开的
+                $(this).next('.submenu').slideUp(300);
+                $(this).parent().removeClass("active");
+            }
+            else{
+                $(this).next('.submenu').slideDown(300);
+                $(this).parent().addClass("active");
+            }
+            
+        }
     });
 }
 function uiComponentEventBind(){
+    // 自动填充输入框 开始
     $.each($("[data-autoComplete]"),function(){
         var $this = $(this);
         var $input = $(this).children('input');
@@ -124,10 +124,50 @@ function uiComponentEventBind(){
             }
         })
     });
-    
+    // 自动填充输入框 结束
+    // 上传轮播图部分 开始
+    $.each($("[data-sildeImageBox]"),function(){
+        var $this = $(this);
+        var src = $this.attr("data-src");
+        if(src){
+            var image = '<img src="'+src+'" />';
+            $this.find(".slideImageUpload").append(image);
+        }
+        $this.find(".slideImageUpload").bind('click',function(){
+            var $slideImageUpload = $(this);
+            var $sildeImageBox = $this;
+            // 值为0时说明这个为传图片的盒子
+            if($(this).closest("[data-sildeImageBox]").attr("data-sildeImageBox")!=1){
+                var fileInput = document.createElement("input");
+                fileInput.type = "file";
+                fileInput.click();
+                fileInput.addEventListener('change',function(event){
+                    if(this.files[0].type.match(/image\/\w*/)){
+                        var objectURL = window.URL.createObjectURL(this.files[0]);
+                        var _image = '<img src="'+objectURL+'" />';
+                        var $_sildeImageBox = $sildeImageBox.clone().attr({
+                            "data-src": objectURL,
+                            "data-sildeImageBox": 1
+                        });
+                        $_sildeImageBox.find(".slideImageUpload").append(_image);
+                        $_sildeImageBox.insertBefore($this);
+                    }
+                    else{
+                        alert("请上传图片格式的文件");
+                    }
+                    
+                });
+            }
+        });
+    });
+    $(".admin_ui_cont").on('click','.deleteButton',function(){
+        var $deleteButton = $(this);
+        $deleteButton.closest(".amin_ui_slideImageBox").remove();
+    });
+    // 上传轮播图部分 结束
 }
 function windowReset(){
-	var h =  $(window).height()-$(ADMIN_CONFIG.headerSelector).height();
+    var h =  $(window).height()-$(ADMIN_CONFIG.headerSelector).height();
     $(ADMIN_CONFIG.contentSelector).height(h);
 }
 function loadContent() {

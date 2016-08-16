@@ -7,6 +7,18 @@
 @yellowColor: #f8a326;
 @blueColor: #00acec;
 @textColor: #999;
+.redColor{
+	color: @redColor;
+}
+.greenColor{
+	color: @greenColor;
+}
+.yellowColor{
+	color: @yellowColor;
+}
+.blueColor{
+	color: @blueColor;
+}
 body{
 	position: absolute;
 	width: 100%;
@@ -199,6 +211,7 @@ body{
 }
 .admin_ui_cont{
 	padding: 20px;
+	.after;
 }
 .admin_ui_padding{
 	padding: 8px;
@@ -228,6 +241,11 @@ body{
 		&:hover{
 			background-color: darken(#fff,5%);
 		}
+	}
+	&.admin_ui_button_grey{
+		background-color: #e8e8e8;
+		border-bottom-color: darken(@lineColor, 20%);
+		cursor: not-allowed;
 	}
 	&.admin_ui_button_green{
 		background-color: @greenColor;
@@ -426,6 +444,10 @@ body{
 	width: 100%;
 	background-color: #fff;
 }
+.admin_ui_textarea{
+	.admin_ui_input;
+	height: 90px;
+}
 .admin_ui_separator{
 	height: 0;
 	width: 100%;
@@ -561,6 +583,89 @@ body{
 	padding-left: 7px;
 	background-color: white;
 	/*border-radius: 5px;*/
+}
+.admin_ui_statisticsBox{
+	.after;
+	.admin_ui_statisticsBox_unit{
+		height: 70px;
+		width: 230px;
+		background-color: #fff;
+		border: 1px solid @lineColor;
+		padding: 10px;
+		float: left;
+		margin-right: 10px;
+		margin-bottom: 10px;
+		.rightPart{
+			float: left;
+			.value{
+				font-size: 21px;
+				line-height: 28px;
+				font-weight: bold;
+			}
+			.name{
+				font-size: 14px;
+			}
+		}
+		.leftPart{
+			float: right;
+			font-size: 30px;
+		}
+	}
+}
+.amin_ui_slideImageBox{
+	padding: 10px;
+	width: 240px;
+	border: 1px solid @lineColor;
+	background-color: #fff;
+	float: left;
+	margin-right: 15px;
+	margin-bottom: 15px;
+	&[data-sildeImageBox='0']{
+		.admin_ui_textarea{
+			display: none;
+		}
+		.deleteButton{
+			display: none;
+		}
+		.slideImageUpload{
+		}
+	}
+	&[data-sildeImageBox='1']{
+		.deleteButton{
+			display: block;
+		}
+		.slideImageUpload{
+			
+		}
+	}
+	.slideImageUpload{
+		position: relative;
+		width: 100%;
+		height: 0;
+		padding-bottom: 40%;
+		border: 1px dashed @lineColor;
+		margin-bottom: 5px;
+		cursor: pointer;
+		img{
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: block;
+			width: 100%;
+			height: 100%;
+			cursor: default;
+		}
+		&>.tip{
+			.veryCenter;
+			width: 100%;
+			padding: 10px;
+			color: @textColor;
+			text-align: center;
+		}
+	}
+	.admin_ui_textarea{
+
+	}
 }
 .iconButton{
 	margin: 0 3px;

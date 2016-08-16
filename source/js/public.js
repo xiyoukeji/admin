@@ -3,20 +3,11 @@ var ADMIN_CONFIG = {
     "mainBodySelector": "#admin_body",
     "headerSelector": "#admin_header",
     "contentSelector": "#admin_content",
-<<<<<<< HEAD
-    "leftSelector":"#admin_left"
-=======
     "leftSelector": "#admin_left"
->>>>>>> origin/master
 };
 $(function() {
     adminInit();
-<<<<<<< HEAD
     function adminInit(){
-=======
-
-    function adminInit() {
->>>>>>> origin/master
         eventBind();
     }
 });
@@ -25,35 +16,21 @@ function eventBind() {
     // eventBind 仅进行一次
     // 页面刷新 hash变化时的处理
     $(window).bind('load hashchange', loadContent);
-<<<<<<< HEAD
-    $(window).bind('resize',windowReset);
-    $(window).bind('click', function(){
-=======
     $(window).bind('resize', windowReset);
     $(window).bind('click', function() {
->>>>>>> origin/master
         $("[data-hideWhenBlur]").hide();
     });
     $(window).on('click', '[data-urlBack]', function() {
         window.history.back();
     })
-<<<<<<< HEAD
-    $(ADMIN_CONFIG.headerSelector+" .client").bind("click",function(e){
-        if($(".dropdown-menu").is(":hidden")){
-            $(".dropdown-menu").show();
-        }
-        else{
-=======
     $(ADMIN_CONFIG.headerSelector + " .client").bind("click", function(e) {
         if ($(".dropdown-menu").is(":hidden")) {
             $(".dropdown-menu").show();
         } else {
->>>>>>> origin/master
             $(".dropdown-menu").hide();
         }
         e.stopPropagation();
     });
-<<<<<<< HEAD
     $(ADMIN_CONFIG.leftSelector+" .leftmenu>div>.line").bind('click',function(){
         if($(this).next('.submenu').length){
             // 有子菜单
@@ -71,26 +48,6 @@ function eventBind() {
     });
 }
 function uiComponentEventBind(){
-    // 自动填充输入框 开始
-    $.each($("[data-autoComplete]"),function(){
-=======
-    $(ADMIN_CONFIG.leftSelector + " .leftmenu>div>.line").bind('click', function() {
-        if ($(this).next('.submenu').length) {
-            // 有子菜单
-            if ($(this).hasClass("active")) {
-                // 打开的
-                $(this).next('.submenu').slideUp(300);
-                $(this).removeClass("active");
-            } else {
-                $(this).next('.submenu').slideDown(300);
-                $(this).addClass("active");
-            }
-
-        }
-    });
-}
-
-function uiComponentEventBind() {
     $(".uploadPic").off().on('change', function(event) {
         event.preventDefault();
         var parent = $(this).parents(".admin_ui_imgUpload");
@@ -115,9 +72,8 @@ function uiComponentEventBind() {
             }
         }
     });
-
+    // 自动填充输入框 开始
     $.each($("[data-autoComplete]"), function() {
->>>>>>> origin/master
         var $this = $(this);
         var $input = $(this).children('input');
         var params = $this.attr('data-params');
@@ -189,7 +145,6 @@ function uiComponentEventBind() {
             }
         })
     });
-<<<<<<< HEAD
     // 自动填充输入框 结束
     // 上传轮播图部分 开始
     $.each($("[data-sildeImageBox]"),function(){
@@ -234,8 +189,6 @@ function uiComponentEventBind() {
 }
 function windowReset(){
     var h =  $(window).height()-$(ADMIN_CONFIG.headerSelector).height();
-=======
-
 }
 
 function createCanvas(src, flag, parent) {
@@ -329,7 +282,6 @@ function dataURLtoBlob(dataurl) {
 
 function windowReset() {
     var h = $(window).height() - $(ADMIN_CONFIG.headerSelector).height();
->>>>>>> origin/master
     $(ADMIN_CONFIG.contentSelector).height(h);
 }
 

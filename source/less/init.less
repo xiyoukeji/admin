@@ -44,7 +44,14 @@
     transform: translate(-50%,-50%);
     -webkit-transform: translate(-50%,-50%);
 }
-
+.centerHeight(@height) {
+    height: @height;
+    line-height: (@height - 2);
+    text-align: center;
+}
+.border(@color: @lineColor) {
+    border: 1px solid @color;
+}
 
 
 

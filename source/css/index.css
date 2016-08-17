@@ -12,8 +12,7 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
 }
 .redColor {
@@ -101,7 +100,7 @@ body {
   background-color: #F4F4F4;
   z-index: 0;
   overflow: auto;
-  border-right: 1px solid #dddddd;
+  border-right: 1px solid #ddd;
 }
 .admin_left .leftmenu {
   height: 100%;
@@ -113,7 +112,7 @@ body {
   display: block;
   height: 42px;
   line-height: 42px;
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #ddd;
   padding-left: 42px;
   padding-right: 42px;
   font-size: 14px;
@@ -198,7 +197,7 @@ body {
   height: 50px;
   width: 100%;
   padding: 5px 20px;
-  border-top: 1px solid #dddddd;
+  border-top: 1px solid #ddd;
   background-color: #fff;
 }
 .admin_ui_button_group:after {
@@ -211,7 +210,7 @@ body {
   margin: 0 8px;
 }
 .admin_ui_border {
-  border: 1px solid #dddddd;
+  border: 1px solid #ddd;
   background-color: #fff;
 }
 .admin_ui_cont {
@@ -241,7 +240,7 @@ body {
   text-align: center;
   padding: 13px;
   font-size: 14px;
-  border: 1px solid #dddddd;
+  border: 1px solid #ddd;
   line-height: 1;
   cursor: pointer;
 }
@@ -284,7 +283,7 @@ body {
 .admin_ui_button.admin_ui_button_yellow:hover {
   background-color: #f7990d;
 }
-.dropdown-menu {
+.admin_ui_dropdown_menu {
   position: absolute;
   background-color: white;
   list-style: none;
@@ -292,15 +291,12 @@ body {
   padding: 5px 0;
   top: 45px;
   right: 10px;
-  border: 1px solid #dddddd;
+  border: 1px solid #ddd;
   line-height: 23px;
   cursor: pointer;
   display: none;
 }
-.dropdown-menu li {
-  padding: 0 10px;
-}
-.dropdown-menu:after {
+.admin_ui_dropdown_menu:after {
   position: absolute;
   top: -6px;
   right: 10px;
@@ -310,18 +306,23 @@ body {
   border-left: 6px solid transparent;
   content: '';
 }
-.dropdown-menu:before {
+.admin_ui_dropdown_menu:before {
   position: absolute;
   top: -7px;
   right: 9px;
   display: inline-block;
   border-right: 7px solid transparent;
-  border-bottom: 7px solid #dddddd;
+  border-bottom: 7px solid #ddd;
   border-left: 7px solid transparent;
   border-bottom-color: rgba(0, 0, 0, 0.2);
   content: '';
 }
-.dropdown-menu li:hover {
+.admin_ui_dropdown_menu a {
+  display: block;
+  width: 100%;
+  padding: 0 10px;
+}
+.admin_ui_dropdown_menu a:hover {
   background-color: #f34541;
   color: white;
 }
@@ -329,7 +330,7 @@ body {
   width: 100%;
   height: 84px;
   padding: 20px;
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #ddd;
   background-color: #fff;
 }
 .admin_ui_header > i {
@@ -344,12 +345,12 @@ body {
   height: 50px;
   background-color: white;
   padding: 10px;
-  border-top: 1px solid #dddddd;
-  border-left: 1px solid #dddddd;
-  border-right: 1px solid #dddddd;
+  border-top: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
 }
 .admin_ui_table {
-  border: 1px solid #dddddd;
+  border: 1px solid #ddd;
   border-collapse: collapse;
   table-layout: fixed;
   width: 100%;
@@ -375,7 +376,7 @@ body {
 .admin_ui_table tr th,
 .admin_ui_table tr td {
   padding: 8px;
-  border: 1px solid #dddddd;
+  border: 1px solid #ddd;
 }
 .admin_ui_form {
   border-collapse: collapse;
@@ -417,7 +418,7 @@ body {
   margin-bottom: 20px;
 }
 .admin_ui_leadForm tr td.admin_ui_leadForm_lead p {
-  color: #999999;
+  color: #999;
   width: 200px;
   font-size: 12px;
 }
@@ -431,7 +432,7 @@ body {
 .admin_ui_input {
   padding: 6px 4px;
   height: 30px;
-  border: 1px solid #dddddd;
+  border: 1px solid #ddd;
   width: 100%;
   background-color: #fff;
 }
@@ -479,7 +480,7 @@ body {
   top: 30px;
   left: 0px;
   z-index: 1;
-  border: 1px solid #dddddd;
+  border: 1px solid #ddd;
   border-top: none;
   background-color: #fff;
 }
@@ -504,7 +505,7 @@ body {
 .admin_ui_imgUpload .uploadPic + label {
   position: relative;
   width: 180px;
-  border: 1px solid #dddddd;
+  border: 1px solid #ddd;
   display: inline-block;
   height: 120px;
   line-height: 118px;
@@ -524,7 +525,7 @@ body {
   display: none;
 }
 .admin_ui_imgUpload label + span {
-  color: #999999;
+  color: #999;
   display: inline-block;
 }
 .admin_ui_imgUpload .multiPicBox img {
@@ -545,7 +546,7 @@ body {
   width: 100%;
   height: 30px;
   padding: 6px 20px 6px 4px;
-  border: 1px solid #dddddd;
+  border: 1px solid #ddd;
   border-radius: 0;
   appearance: none;
   -moz-appearance: none;
@@ -596,9 +597,9 @@ body {
   background-color: #fff;
   padding: 10px;
   position: relative;
-  border-left: 1px solid #dddddd;
-  border-right: 1px solid #dddddd;
-  border-bottom: 1px solid #dddddd;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
 }
 .admin_ui_word {
   width: 100px;
@@ -612,10 +613,10 @@ body {
 .admin_ui_label {
   height: 33px;
   width: 400px;
-  border: 1px solid #dddddd;
+  border: 1px solid #ddd;
   font-size: 14px;
   padding-left: 7px;
-  background-color: white
+  background-color: white;
   /*border-radius: 5px;*/
 }
 .admin_ui_statisticsBox:after {
@@ -730,4 +731,3 @@ body {
   background: #ddd;
   color: #000;
 }
-/*# sourceMappingURL=index.css.map */

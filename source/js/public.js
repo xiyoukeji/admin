@@ -23,11 +23,12 @@ function eventBind() {
     $(window).on('click', '[data-urlBack]', function() {
         window.history.back();
     })
-    $(ADMIN_CONFIG.headerSelector + " .client").bind("click", function(e) {
-        if ($(".dropdown-menu").is(":hidden")) {
-            $(".dropdown-menu").show();
-        } else {
-            $(".dropdown-menu").hide();
+    $(ADMIN_CONFIG.headerSelector+" .client").bind("click",function(e){
+        if($("#admin_ui_dropdown_menu").is(":hidden")){
+            $("#admin_ui_dropdown_menu").show();
+        }
+        else{
+            $("#admin_ui_dropdown_menu").hide();
         }
         e.stopPropagation();
     });

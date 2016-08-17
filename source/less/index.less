@@ -442,6 +442,10 @@ body{
 	border: 1px solid @lineColor;
 	width: 100%;
 	background-color: #fff;
+	&[disabled]{
+		background-color: @greyColor;
+		cursor: not-allowed;
+	}
 }
 .admin_ui_textarea{
 	.admin_ui_input;
@@ -740,5 +744,20 @@ body{
   		}
 	}
 }
-
+.admin_ui_table_split_half{
+	border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+	tbody{
+		tr{
+			td{
+				vertical-align: top;
+				width: 50%;
+				&:nth-child(1){
+					padding-right: 15px;
+				}
+			}
+		}
+	}
+}
 

@@ -1,0 +1,146 @@
+<div class="admin_content_innerBox admin_ui_cont_bottomPadding">
+	<div class="admin_scrollBox">
+		<div class="admin_ui_header">
+			<i class="fa fa-users fa-2x admin_ui_mainColor"></i>
+			<span class="maintitle">用户管理－详情</span>
+		</div>
+		<div class="admin_ui_cont">
+			<div id="userManagementDetailForm" class="admin_ui_border admin_ui_cont">
+				<table class="admin_ui_table_split_half">
+					<tbody>
+						<tr>
+							<td>
+								<div class="admin_ui_form_field">
+									<div class="admin_ui_name">头像</div>
+									<img style="width: 60px;" src="../source/images/rect.jpg" />
+								</div>
+							</td>
+							<td>
+								
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="admin_ui_form_field">
+									<div class="admin_ui_name">id</div>
+									<input type="text" class="admin_ui_input" value="123456" disabled />
+								</div>
+							</td>
+							<td>
+								<div class="admin_ui_form_field">
+									<div class="admin_ui_name">昵称</div>
+									<input type="text" class="admin_ui_input" value="猪八戒" disabled />
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="admin_ui_form_field">
+									<div class="admin_ui_name">身高</div>
+									<input type="text" class="admin_ui_input" value="180cm" disabled />
+								</div>
+							</td>
+							<td>
+								<div class="admin_ui_form_field">
+									<div class="admin_ui_name">体重</div>
+									<input type="text" class="admin_ui_input" value="90kg" disabled />
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="admin_ui_form_field">
+									<div class="admin_ui_name">胸围</div>
+									<input type="text" class="admin_ui_input" value="90cm" disabled />
+								</div>
+							</td>
+							<td>
+								<div class="admin_ui_form_field">
+									<div class="admin_ui_name">腰围</div>
+									<input type="text" class="admin_ui_input" value="60cm" disabled />
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="admin_ui_form_field">
+									<div class="admin_ui_name">臀围</div>
+									<input type="text" class="admin_ui_input" value="90cm" disabled />
+								</div>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="admin_ui_form_field">
+									<div class="admin_ui_name">手机号</div>
+									<input type="text" class="admin_ui_input" value="18868877299" disabled />
+								</div>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="admin_ui_form_field">
+									<div class="admin_ui_name">淘宝账号</div>
+									<input type="text" class="admin_ui_input" value="zlf888@alibaba.com" disabled />
+								</div>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="admin_ui_form_field">
+									<div class="admin_ui_name">京东账号</div>
+									<input type="text" class="admin_ui_input" value="zlf888@jd.com" disabled />
+								</div>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="admin_ui_cont_bottomFixed">
+	<div class="admin_ui_button_group" style="float: right">
+		<div class="admin_ui_button admin_ui_button_white" data-urlBack>
+			返回
+		</div>
+		<div id="userManagementDetailEditButton" class="admin_ui_button admin_ui_button_green">
+			修改
+		</div>
+	</div>
+</div>
+<script>
+$("#userManagementDetailEditButton").bind('click',function(){
+	if($(this).text() == "修改"){
+		$("input",$("#userManagementDetailForm")).prop("disabled",false);
+		$(this).text("保存");
+	}
+	else{
+		$("input",$("#userManagementDetailForm")).prop("disabled",true);
+		$(this).text("修改");
+	}
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

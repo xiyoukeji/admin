@@ -436,6 +436,10 @@ body {
   width: 100%;
   background-color: #fff;
 }
+.admin_ui_input[disabled] {
+  background-color: #f4f5f6;
+  cursor: not-allowed;
+}
 .admin_ui_textarea {
   padding: 6px 4px;
   height: 30px;
@@ -443,6 +447,10 @@ body {
   width: 100%;
   background-color: #fff;
   height: 90px;
+}
+.admin_ui_textarea[disabled] {
+  background-color: #f4f5f6;
+  cursor: not-allowed;
 }
 .admin_ui_separator {
   height: 0;
@@ -730,4 +738,16 @@ body {
 .page > a > span.click_page {
   background: #ddd;
   color: #000;
+}
+.admin_ui_table_split_half {
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+}
+.admin_ui_table_split_half tbody tr td {
+  vertical-align: top;
+  width: 50%;
+}
+.admin_ui_table_split_half tbody tr td:nth-child(1) {
+  padding-right: 15px;
 }

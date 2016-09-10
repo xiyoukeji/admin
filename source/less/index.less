@@ -332,16 +332,26 @@ body{
 		font-weight: bold;
 	}
 }
-
-
 .admin_ui_search{
 	width: 100%;
-    height: 50px;
     background-color: white;
     padding: 10px;
     border-top: 1px solid @lineColor;
     border-left: 1px solid @lineColor;
     border-right: 1px solid @lineColor;
+    .after;
+    .inner{
+    	float: right;
+    	position:relative;
+    	&>input{
+    		padding-right: 25px;
+    	}
+    	&>i{
+    		position: absolute;
+    		right: 8px;
+    		top: 6px;
+    	}
+    }
 }
 .admin_ui_table{
 	border: 1px solid @lineColor;
